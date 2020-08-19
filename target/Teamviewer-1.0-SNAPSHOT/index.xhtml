@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <h:head>
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+        <title>WebRTC Screen Sharing Application</title>
+
+    </h:head>
+
+
+    <h:body>
+        <p:panelGrid columns="2" layout="grid">
+                <video style="width: 600px; height: 600px;border: 5px coral outset" id="remoteVideo"
+                       poster="https://img.icons8.com/fluent/48/000000/person-male.png" autoplay="true" ></video>
+            <p:separator/>
+            <!-- Your camera video will show up here. -->
+                <video style="width: 600px; height: 600px;border: 5px cadetblue dotted" id="localVideo"
+                       poster="https://img.icons8.com/fluent/48/000000/person-male.png" autoplay="true"  muted="muted"></video>
+        </p:panelGrid>
+
+        <div class="box">
+            <button id="leaveButton" style="background-color: #008CBA; color: white; ">Leave Screen Sharing</button>
+        </div>  
+
+        <script type="text/javascript" src="screenshare.js?reloads=true"></script>
+
+    </h:body>
+
+
+
+</html>

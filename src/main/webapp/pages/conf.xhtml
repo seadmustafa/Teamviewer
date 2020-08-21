@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <h:head>
+        <link rel="shortcut icon" type="image/png" href="#{facesContext.externalContext.requestContextPath}/images/favicon.png" />
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+        <title>WebRTC Video Conferencing</title>
+        <style>
+            .button {
+                background-color: #4CAF50; /* Green */
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                -webkit-transition-duration: 0.4s; /* Safari */
+                transition-duration: 0.4s;
+            }
+
+            .button1 {
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            }
+            #localVideo
+            {
+                width: 70%; 
+                height: 100%;
+                text-align: center;
+            }
+            #remoteVideo{
+                width: 70%; 
+                height: 100%;
+                text-align: center
+            }
+            .ui-panel-title  {
+                text-align:  center;
+            }
+
+        </style>
+    </h:head>
+
+
+    <h:form>
+        <p:panelGrid columns="2" layout="grid">
+            <p:panel class="ui-panel-title" header="Remote Video">
+                <video  id="remoteVideo1"  
+                        poster="#{facesContext.externalContext.requestContextPath}/images/fuser.png" autoplay="true" />
+                <!-- Your camera video will show up here. -->
+            </p:panel>
+            <p:panel class="ui-panel-title" header="Local Video" >
+                <video  id="localVideo1" 
+                        poster="#{facesContext.externalContext.requestContextPath}/images/muser.png" autoplay="true"  muted="muted"></video>
+            </p:panel>
+            <div class="box" style="text-align: right">
+                <button id="leaveButton" class="button button1" style="background-color: #008CBA; color: white; ">Leave Screen Sharing</button>
+            </div> 
+        </p:panelGrid>
+
+
+        <script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/resources/conf.js?reloads=true"></script>
+
+    </h:form>
+
+
+
+</html>
